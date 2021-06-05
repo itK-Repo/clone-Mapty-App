@@ -21,11 +21,7 @@ class App {
     this._getPosition();
     // MEMO: addEventListener 는 this를 form element로 한다 -> bind(this (= App))
     form.addEventListener('submit', this._newWorkout.bind(this));
-    
-    inputType.addEventListener('change', () => {
-      inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
-      inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
-    })
+    inputType.addEventListener('change', this._toggleElevationField)
   }
 
   _getPosition() {
@@ -54,7 +50,8 @@ class App {
   }
 
   _toggleElevationField() {
-
+    inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
+    inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
   }
 
   _newWorkout(e) {
