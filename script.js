@@ -54,3 +54,8 @@ form.addEventListener('submit', function(e) {
   .setPopupContent('work out!')
   .openPopup();
 })
+
+inputType.addEventListener('change', () => {
+  inputElevation.closest('.form__row').classList.toggle('form__row--hidden');
+  inputCadence.closest('.form__row').classList.toggle('form__row--hidden');
+})
